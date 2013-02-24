@@ -70,10 +70,10 @@ for ($offset = 0; $offset <= $total; $offset += $limit) {
 		rename($file, $file . '.txt');
 
 		foreach (libxml_get_errors() as $error) {
-	        print "Error {$error->code} in {$error->file} on line {$error->line}: {$error->message}\n";
-	    }
+			print "Error {$error->code} in {$error->file} on line {$error->line}: {$error->message}\n";
+		}
 
-	    // TODO: refetch if invalid
+		// TODO: refetch if invalid
 	}
 
 	libxml_clear_errors();
