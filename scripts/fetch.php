@@ -4,7 +4,7 @@ if (!isset($argv[1])) {
 	exit("Usage: {$argv[0]} result-file.json\n");
 }
 
-if (!file_exists('../data')) {
+if (!file_exists(__DIR__ . '/../data')) {
 	throw new Exception('Data directory at ../data/ does not exist');
 }
 
@@ -37,7 +37,7 @@ for ($offset = 0; $offset <= $total; $offset += $limit) {
 
 	// prepare
 	$url = 'http://eutils.be-md.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?' . http_build_query($params);
-	$file = sprintf('../data/%s.xml', md5($url));
+	$file = sprintf(__DIR__ . '/../data/%s.xml', md5($url));
 
 	if (file_exists($file) && filesize($file)) {
 		return;

@@ -21,7 +21,7 @@ $result = array(
 	'querykey' => $dom->getElementsByTagName('QueryKey')->item(0)->textContent,
 );
 
-$file = sprintf('../data/result-%d.json', time());
+$file = sprintf(__DIR__ . '/../data/result-%d.json', time());
 file_put_contents($file, json_encode($result));
 
 print_r($result);

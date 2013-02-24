@@ -16,7 +16,7 @@ $xsl->load('transform.xsl');
 $processor = new XSLTProcessor;
 $processor->importStylesheet($xsl);
 
-foreach (glob('../data/*.xml') as $file) {
+foreach (glob(__DIR__ . '/../data/*.xml') as $file) {
 	print "Indexing $file\n";
 
 	$input = new DOMDocument;
